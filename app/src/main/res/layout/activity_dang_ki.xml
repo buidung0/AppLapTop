@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutdangky"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.DangKiActivity">
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ĐĂNG KÝ"
+            android:textStyle="bold"
+            android:textSize="30dp"/>
+        <EditText
+            android:layout_marginTop="60dp"
+            android:padding="10dp"
+            android:id="@+id/email"
+            android:inputType="textEmailAddress"
+            android:drawableLeft="@drawable/ic_email"
+            android:hint="Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </EditText>
+        <EditText
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:id="@+id/name"
+            android:drawableLeft="@drawable/ic_baseline_abc_24"
+            android:hint="Họ Tên"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </EditText>
+        <EditText
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:id="@+id/phone"
+            android:inputType="number"
+            android:drawableLeft="@drawable/ic_baseline_local_phone_24"
+            android:hint="Nhập SĐT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </EditText>
+        <EditText
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:id="@+id/pass"
+            android:inputType="textPassword"
+            android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
+            android:hint="Mật khẩu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </EditText>
+        <EditText
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:id="@+id/repass"
+            android:inputType="textPassword"
+            android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
+            android:hint="Nhập Lại Mật khẩu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </EditText>
+
+        <Button
+            android:background="@drawable/background_button"
+            android:layout_marginRight="100dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/btndk"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Đăng Ký"></Button>
+    </LinearLayout>
+
+</LinearLayout>
