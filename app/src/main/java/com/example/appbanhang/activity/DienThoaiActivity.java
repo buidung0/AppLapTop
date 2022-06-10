@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.example.appbanhang.R;
 import com.example.appbanhang.adapter.DienThoaiAdapter;
 import com.example.appbanhang.model.SanPhamMoi;
-import com.example.appbanhang.retrofit.AipBanHang;
+import com.example.appbanhang.retrofit.ApiBanHang;
 import com.example.appbanhang.retrofit.RetrofitClient;
 import com.example.appbanhang.util.Utils;
 
@@ -28,7 +28,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 public class DienThoaiActivity extends AppCompatActivity {
     Toolbar toolbar;
     RecyclerView recyclerView;
-    AipBanHang aipBanHang;
+    ApiBanHang apiBanHang;
     CompositeDisposable compositeDisposable = new CompositeDisposable();
     int page = 1;
     int loai;
@@ -42,7 +42,7 @@ public class DienThoaiActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dien_thoai);
-        aipBanHang = RetrofitClient.getInstance(Utils.BASE_URL).create(AipBanHang.class);
+        apiBanHang = RetrofitClient.getInstance(Utils.BASE_URL).create(ApiBanHang.class);
         loai = getIntent().getIntExtra("loai",1);
         Anhxa();
         ActionToolBar();
@@ -105,7 +105,7 @@ public class DienThoaiActivity extends AppCompatActivity {
 
     private void getData(int page) {
         Log.d("test", page + "..." + loai);
-        compositeDisposable.add(aipBanHang.getSanPham(page, loai)
+        compositeDisposable.add(apiBanHang.getSanPham(page, loai)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(

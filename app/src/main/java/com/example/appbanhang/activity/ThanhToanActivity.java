@@ -17,8 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.appbanhang.R;
-import com.example.appbanhang.model.User_model;
-import com.example.appbanhang.retrofit.AipBanHang;
+import com.example.appbanhang.retrofit.ApiBanHang;
 import com.example.appbanhang.retrofit.RetrofitClient;
 import com.example.appbanhang.util.Utils;
 import com.google.gson.Gson;
@@ -35,7 +34,7 @@ public class ThanhToanActivity extends AppCompatActivity {
     EditText edtdiachi;
     AppCompatButton btndathang;
     CompositeDisposable compositeDisposable = new CompositeDisposable();
-    AipBanHang aipBanHang;
+    ApiBanHang apiBanHang;
     long tongtien;
     int totalItem;
 
@@ -72,14 +71,14 @@ public class ThanhToanActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String str_diachi = edtdiachi.toString().trim();
                 if(TextUtils.isEmpty(str_diachi)){
-                    Toast.makeText(getApplicationContext(),"ban chua nhap dai chi",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"bạn chưa nhập địa chỉ",Toast.LENGTH_LONG).show();
                 }else{
                     //post data
                     String str_email = Utils.user_current.getEmail();
                     String str_sdt = Utils.user_current.getPhone();
                     int id = Utils.user_current.getId();
-                    Log.d("test",new Gson().toJson(Utils.manggiohang));//new Gson().toJson(Utils.manggiohang
-                    compositeDisposable.add(aipBanHang.createOrder(str_email,str_sdt,String.valueOf(tongtien),id,str_diachi,totalItem,new Gson().toJson(Utils.manggiohang))
+                    Log.d("test",new Gson().toJson(Utils.manggiohang));
+                    compositeDisposable.add(apiBanHang.createOrder(str_email,str_sdt,String.valueOf(tongtien),id,str_diachi,totalItem,new Gson().toJson(Utils.manggiohang))
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(
@@ -100,7 +99,7 @@ public class ThanhToanActivity extends AppCompatActivity {
 
 
     private void initView() {
-        aipBanHang = RetrofitClient.getInstance(Utils.BASE_URL).create(AipBanHang.class);
+        apiBanHang = RetrofitClient.getInstance(Utils.BASE_URL).create(ApiBanHang.class);
         txttongtien = findViewById(R.id.txttongtien);
         txtsodienthoai = findViewById(R.id.txtsodienthoai);
         txtemail = findViewById(R.id.txtemail);

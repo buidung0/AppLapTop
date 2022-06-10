@@ -12,8 +12,6 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -29,10 +27,8 @@ import com.example.appbanhang.R;
 import com.example.appbanhang.adapter.LoaiSpAdapter;
 import com.example.appbanhang.adapter.SanphammoiAdapter;
 import com.example.appbanhang.model.LoaiSp;
-import com.example.appbanhang.model.LoaiSpModel;
 import com.example.appbanhang.model.SanPhamMoi;
-import com.example.appbanhang.model.SanPhamMoiModel;
-import com.example.appbanhang.retrofit.AipBanHang;
+import com.example.appbanhang.retrofit.ApiBanHang;
 import com.example.appbanhang.retrofit.RetrofitClient;
 import com.example.appbanhang.util.Utils;
 import com.google.android.material.navigation.NavigationView;
@@ -42,7 +38,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
-import io.reactivex.rxjava3.core.Scheduler;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
@@ -56,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     LoaiSpAdapter loaiSpAdapter;
     List<LoaiSp> mangloaisp;
     CompositeDisposable compositeDisposable = new CompositeDisposable();
-    AipBanHang aipBanHang;
+    ApiBanHang apiBanHang;
     List<SanPhamMoi> mangSpMoi;
     SanphammoiAdapter spAdapter;
     NotificationBadge badge;
@@ -66,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        aipBanHang = RetrofitClient.getInstance(Utils.BASE_URL).create(AipBanHang.class);
+        apiBanHang = RetrofitClient.getInstance(Utils.BASE_URL).create(ApiBanHang.class);
         Anhxa();
         ActionBar(); // hàm gọi toolbar
         if(isConnect(this)){
@@ -107,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getSpMoi() {
-        compositeDisposable.add(aipBanHang.getSpMoi()
+        compositeDisposable.add(apiBanHang.getSpMoi()
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe(
@@ -124,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getLoaiSanPham() {
-        compositeDisposable.add(aipBanHang.getLoaiSp()
+        compositeDisposable.add(apiBanHang.getLoaiSp()
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe(

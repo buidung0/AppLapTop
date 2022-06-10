@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.appbanhang.R;
-import com.example.appbanhang.retrofit.AipBanHang;
+import com.example.appbanhang.retrofit.ApiBanHang;
 import com.example.appbanhang.retrofit.RetrofitClient;
 import com.example.appbanhang.util.Utils;
 
@@ -21,7 +21,7 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class DangKiActivity extends AppCompatActivity {
-    AipBanHang aipBanHang;
+    ApiBanHang apiBanHang;
     CompositeDisposable compositeDisposable = new CompositeDisposable();
     Button btndangky;
     EditText email,pass,repass,name,phone;
@@ -34,7 +34,7 @@ public class DangKiActivity extends AppCompatActivity {
     }
 
     private void Anhxa() {
-        aipBanHang = RetrofitClient.getInstance(Utils.BASE_URL).create(AipBanHang.class);
+        apiBanHang = RetrofitClient.getInstance(Utils.BASE_URL).create(ApiBanHang.class);
         btndangky = findViewById(R.id.btndk);
         email = findViewById(R.id.email);
         name = findViewById(R.id.name);
@@ -79,7 +79,7 @@ public class DangKiActivity extends AppCompatActivity {
                 else if(str_repass.equals(str_pass))//so sanh mat khau
                 {
                     //lay data
-                    compositeDisposable.add(aipBanHang.dangky(str_email,str_name,str_phone,str_pass,str_repass)
+                    compositeDisposable.add(apiBanHang.dangky(str_email,str_name,str_phone,str_pass,str_repass)
                             .subscribeOn(Schedulers.io())
                             .observeOn(AndroidSchedulers.mainThread())
                             .subscribe(

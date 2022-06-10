@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.appbanhang.R;
-import com.example.appbanhang.retrofit.AipBanHang;
+import com.example.appbanhang.retrofit.ApiBanHang;
 import com.example.appbanhang.retrofit.RetrofitClient;
 import com.example.appbanhang.util.Utils;
 
@@ -25,7 +25,7 @@ public class DangNhapActivity extends AppCompatActivity {
     Button btndangnhap;
     TextView txtdangky;
     EditText edtemail,edtpass;
-    AipBanHang aipBanHang;
+    ApiBanHang apiBanHang;
     CompositeDisposable compositeDisposable = new CompositeDisposable();
 
     @Override
@@ -64,7 +64,7 @@ public class DangNhapActivity extends AppCompatActivity {
                     //luu thong tin dang nhap
                     Paper.book().write("email",str_edtemail);
                     Paper.book().write("password",str_edtpass);
-                    compositeDisposable.add(aipBanHang.dangnhap(str_edtemail,str_edtpass)
+                    compositeDisposable.add(apiBanHang.dangnhap(str_edtemail,str_edtpass)
                             .subscribeOn(Schedulers.io())
                             .observeOn(AndroidSchedulers.mainThread())
                             .subscribe(
@@ -92,7 +92,7 @@ public class DangNhapActivity extends AppCompatActivity {
 
     private void Anhxa() {
         Paper.init(this);
-        aipBanHang = RetrofitClient.getInstance(Utils.BASE_URL).create(AipBanHang.class);
+        apiBanHang = RetrofitClient.getInstance(Utils.BASE_URL).create(ApiBanHang.class);
         txtdangky = findViewById(R.id.txtdangky);
         btndangnhap = findViewById(R.id.btndangnhap);
         edtemail = findViewById(R.id.edtemail);
