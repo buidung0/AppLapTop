@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Doc/AppBanHang/app/src/main/res/layout/activity_gio_hang.xml" value="0.25" />
+        <entry key="..\:/Doc/AppBanHang/app/src/main/res/layout/activity_thanh_toan.xml" value="0.25" />
+        <entry key="..\:/Doc/AppBanHang/app/src/main/res/layout/item_dienthoai.xml" value="0.25" />
+        <entry key="..\:/Doc/AppBanHang/app/src/main/res/layout/item_giohang.xml" value="0.1" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AppBanHang/app/src/main/res/layout/activity_chi_tiet.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AppBanHang/app/src/main/res/layout/activity_dien_thoai.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AppBanHang/app/src/main/res/layout/activity_lap_top.xml" value="0.25416666666666665" />
