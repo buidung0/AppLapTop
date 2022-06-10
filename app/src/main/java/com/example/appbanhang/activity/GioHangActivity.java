@@ -32,7 +32,7 @@ public class GioHangActivity extends AppCompatActivity {
     TextView giohangtrong,tongtien;
     Toolbar toolbar;
     RecyclerView recycleviewgiohang;
-    Button btnmuahang;
+    Button btnmuahang,btntieptucmuahang;
     GiohangAdapter adapter;
     List<GioHang> gioHangList;
     long tongtiensp ;
@@ -81,6 +81,14 @@ public class GioHangActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btntieptucmuahang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -89,6 +97,7 @@ public class GioHangActivity extends AppCompatActivity {
         tongtien = findViewById(R.id.txttongtien);
         recycleviewgiohang = findViewById(R.id.recycleviewgiohang);
         btnmuahang = findViewById(R.id.btnmuahang);
+        btntieptucmuahang = findViewById(R.id.btntieptucmuahang);
     }
 
     @Override
