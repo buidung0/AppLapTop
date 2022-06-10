@@ -30,7 +30,7 @@
             android:name=".activity.LapTopActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.DienThoaiActivity"
+            android:name=".activity.MacBookActivity"
             android:exported="false" />
         <activity
             android:name=".activity.DangKiActivity"

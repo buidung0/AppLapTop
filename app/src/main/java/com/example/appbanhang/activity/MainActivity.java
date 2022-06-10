@@ -87,12 +87,12 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(trangchu);
                         break;
                     case 1:
-                        Intent dienthoai = new Intent(getApplicationContext(), DienThoaiActivity.class);
+                        Intent dienthoai = new Intent(getApplicationContext(), MacBookActivity.class);
                         dienthoai.putExtra("loai",1);
                         startActivity(dienthoai);
                         break;
                     case 2:
-                        Intent laptop = new Intent(getApplicationContext(), DienThoaiActivity.class);
+                        Intent laptop = new Intent(getApplicationContext(), MacBookActivity.class);
                         laptop.putExtra("loai",2);
                         startActivity(laptop);
                         break;

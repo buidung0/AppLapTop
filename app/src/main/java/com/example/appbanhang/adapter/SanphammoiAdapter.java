@@ -55,7 +55,6 @@ public class SanphammoiAdapter extends RecyclerView.Adapter<SanphammoiAdapter.My
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(intent);
                 }
-
             }
         });
     }

@@ -25,7 +25,7 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
-public class DienThoaiActivity extends AppCompatActivity {
+public class MacBookActivity extends AppCompatActivity {
     Toolbar toolbar;
     RecyclerView recyclerView;
     ApiBanHang apiBanHang;
@@ -41,7 +41,7 @@ public class DienThoaiActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dien_thoai);
+        setContentView(R.layout.activity_mac_book);
         apiBanHang = RetrofitClient.getInstance(Utils.BASE_URL).create(ApiBanHang.class);
         loai = getIntent().getIntExtra("loai",1);
         Anhxa();
