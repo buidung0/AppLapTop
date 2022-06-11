@@ -15,10 +15,19 @@
         android:theme="@style/Theme.AppBanHang"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activity.ThemSPActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.QuanLyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.SearchActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.ThanhToanActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.DangNhapActivity"
             android:exported="false" />
         <activity
             android:name=".activity.GioHangActivity"
@@ -36,7 +45,7 @@
             android:name=".activity.DangKiActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.DangNhapActivity"
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

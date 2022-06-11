@@ -37,6 +37,7 @@ import com.nex3z.notificationbadge.NotificationBadge;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.paperdb.Paper;
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
     SanphammoiAdapter spAdapter;
     NotificationBadge badge;
     FrameLayout frameLayout;
+    ImageView imgsearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +98,17 @@ public class MainActivity extends AppCompatActivity {
                         laptop.putExtra("loai",2);
                         startActivity(laptop);
                         break;
+                    case 3:
+                        Intent quanly = new Intent(getApplicationContext(),QuanLyActivity.class);
+                        startActivity(quanly);
+                        break;
+                    case 4:
+                        Paper.book().delete("user");
+                        Intent dangxuat = new Intent(getApplicationContext(),DangNhapActivity.class);
+                        startActivity(dangxuat);
+                        finish();
+                        break;
+
                 }
             }
         });
@@ -169,6 +182,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void Anhxa() {
         toolbar = findViewById(R.id.toolbarmanhinhchinh);
+        imgsearch = findViewById(R.id.imgsearch);
         viewFlipper = findViewById(R.id.viewflipper);
         recyclerViewManHinhChinh = findViewById(R.id.recycleview);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this,2);
@@ -196,6 +210,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent giohang = new Intent(getApplicationContext(),GioHangActivity.class);
                 startActivity(giohang);
+            }
+        });
+        imgsearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),SearchActivity.class);
+                startActivity(intent);
             }
         });
 

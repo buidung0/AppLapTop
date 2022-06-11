@@ -18,31 +18,44 @@
               android:id="@+id/toolbarmanhinhchinh"
               android:layout_width="match_parent"
               android:background="#ff00dfff"
-              app:title="Lapptop Shopping Apps"
+              app:title="Trang Chủ"
               app:titleTextColor="@color/white"
               android:layout_height="?attr/actionBarSize">
-
-              <FrameLayout
-                  android:id="@+id/framegiohang"
-                  android:layout_width="55dp"
-                  android:layout_height="?attr/actionBarSize"
+              <LinearLayout
                   android:layout_gravity="right"
-                  app:layout_constraintEnd_toEndOf="parent"
-                  tools:ignore="MissingConstraints">
-
-                  <com.nex3z.notificationbadge.NotificationBadge
-                      android:id="@+id/memu_sl"
-                      android:layout_width="28dp"
-                      android:layout_height="28dp"
-                      android:layout_gravity="top|right" />
-
+                  android:orientation="horizontal"
+                  android:layout_width="wrap_content"
+                  android:layout_height="?attr/actionBarSize">
                   <ImageView
-                      android:layout_width="40dp"
-                      android:layout_height="40dp"
-                      android:layout_marginTop="10dp"
-                      android:src="@drawable/ic_cart_24" />
+                      android:id="@+id/imgsearch"
+                      android:layout_marginRight="15dp"
+                      android:src="@drawable/ic_search_24"
+                      android:layout_width="wrap_content"
+                      android:layout_height="?attr/actionBarSize"/>
 
-              </FrameLayout>
+                  <FrameLayout
+                      android:id="@+id/framegiohang"
+                      android:layout_width="55dp"
+                      android:layout_height="?attr/actionBarSize"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      tools:ignore="MissingConstraints">
+
+                      <com.nex3z.notificationbadge.NotificationBadge
+                          android:id="@+id/memu_sl"
+                          android:layout_width="28dp"
+                          android:layout_height="28dp"
+                          android:layout_gravity="top|right" />
+
+                      <ImageView
+                          android:layout_width="40dp"
+                          android:layout_height="40dp"
+                          android:layout_marginTop="10dp"
+                          android:src="@drawable/ic_cart_24" />
+
+                  </FrameLayout>
+              </LinearLayout>
+
+
           </androidx.appcompat.widget.Toolbar>
           <ViewFlipper
               android:id="@+id/viewflipper"

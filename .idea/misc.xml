@@ -39,9 +39,17 @@
         <entry key="..\:/Users/Dung/AndroidStudioProjects/AppBanHang/app/src/main/res/layout/item_sanpham.xml" value="0.1" />
         <entry key="..\:/Users/Dung/AndroidStudioProjects/AppBanHang/app/src/main/res/layout/item_sanphammoi.xml" value="0.1" />
         <entry key="..\:/android/AppLapTop/app/src/main/res/layout/activity_accounts.xml" value="0.25" />
+        <entry key="..\:/android/AppLapTop/app/src/main/res/layout/activity_chi_tiet.xml" value="0.18888888888888888" />
         <entry key="..\:/android/AppLapTop/app/src/main/res/layout/activity_dien_thoai.xml" value="0.25" />
         <entry key="..\:/android/AppLapTop/app/src/main/res/layout/activity_gio_hang.xml" value="0.25" />
         <entry key="..\:/android/AppLapTop/app/src/main/res/layout/activity_lap_top.xml" value="0.25" />
+        <entry key="..\:/android/AppLapTop/app/src/main/res/layout/activity_mac_book.xml" value="0.2" />
+        <entry key="..\:/android/AppLapTop/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/android/AppLapTop/app/src/main/res/layout/activity_quan_ly.xml" value="0.2" />
+        <entry key="..\:/android/AppLapTop/app/src/main/res/layout/activity_search.xml" value="0.2" />
+        <entry key="..\:/android/AppLapTop/app/src/main/res/layout/activity_themsp.xml" value="0.2" />
+        <entry key="..\:/android/AppLapTop/app/src/main/res/layout/item_dienthoai.xml" value="0.2" />
+        <entry key="..\:/android/AppLapTop/app/src/main/res/layout/item_giohang.xml" value="0.264" />
       </map>
     </option>
   </component>
