@@ -11,12 +11,11 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.appbanhang.R;
-import com.example.appbanhang.adapter.DienThoaiAdapter;
+import com.example.appbanhang.adapter.LapTopAdapter;
 import com.example.appbanhang.model.SanPhamMoi;
 import com.example.appbanhang.retrofit.ApiBanHang;
 import com.example.appbanhang.retrofit.RetrofitClient;
@@ -35,7 +34,7 @@ public class SearchActivity extends AppCompatActivity {
     EditText edtsearch;
     ApiBanHang apiBanHang;
     CompositeDisposable compositeDisposable = new CompositeDisposable();
-    DienThoaiAdapter adapterDt;
+    LapTopAdapter adapterDt;
     List<SanPhamMoi> sanPhamMoiList;
 
     @Override
@@ -66,7 +65,7 @@ public class SearchActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if(charSequence.length() == 0){
                     sanPhamMoiList.clear();
-                    adapterDt = new DienThoaiAdapter(getApplicationContext(),sanPhamMoiList);
+                    adapterDt = new LapTopAdapter(getApplicationContext(),sanPhamMoiList);
                     recyclerView.setAdapter(adapterDt);
                 }else{
                     getDataSearch(charSequence.toString());
@@ -90,7 +89,7 @@ public class SearchActivity extends AppCompatActivity {
                 sanPhamMoiModel -> {
                     if(sanPhamMoiModel.isSuccess()){
                         sanPhamMoiList = sanPhamMoiModel.getResult();
-                        adapterDt = new DienThoaiAdapter(getApplicationContext(),sanPhamMoiList);
+                        adapterDt = new LapTopAdapter(getApplicationContext(),sanPhamMoiList);
                         recyclerView.setAdapter(adapterDt);
                     }
                 },

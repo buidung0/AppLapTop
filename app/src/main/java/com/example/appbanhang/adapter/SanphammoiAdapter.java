@@ -2,6 +2,7 @@ package com.example.appbanhang.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +15,11 @@ import com.bumptech.glide.Glide;
 import com.example.appbanhang.Interface.ItemClickListen;
 import com.example.appbanhang.R;
 import com.example.appbanhang.activity.ChiTietActivity;
+import com.example.appbanhang.model.EventBus.SuaXoaEvent;
 import com.example.appbanhang.model.SanPhamMoi;
+import com.example.appbanhang.util.Utils;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.text.DecimalFormat;
 import java.util.List;
@@ -35,7 +40,6 @@ public class SanphammoiAdapter extends RecyclerView.Adapter<SanphammoiAdapter.My
     @Override
     public MyViewHolder onCreateViewHolder(@androidx.annotation.NonNull ViewGroup parent, int viewType) {
         View item = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_sanphammoi, parent, false);
-
         return new MyViewHolder(item);
     }
 
@@ -45,7 +49,12 @@ public class SanphammoiAdapter extends RecyclerView.Adapter<SanphammoiAdapter.My
         holder.txtten.setText(sanPhamMoi.getTensp());
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
         holder.txtgia.setText("Giá: "+decimalFormat.format(Double.parseDouble(sanPhamMoi.getGiasp()))+ "Đ" );
-        Glide.with(context).load(sanPhamMoi.getHinhanh()).into(holder.imghinhanh);
+        if(sanPhamMoi.getHinhanh().contains("http")){
+            Glide.with(context).load(sanPhamMoi.getHinhanh()).into(holder.imghinhanh);
+        }else{
+            String hinh = Utils.BASE_URL+"images/"+sanPhamMoi.getHinhanh();
+            Glide.with(context).load(hinh).into(holder.imghinhanh);
+        }
         holder.setItemClickListener(new ItemClickListen() {
             @Override
             public void onClick(View view, int pos, boolean isLongClick) {
@@ -54,6 +63,8 @@ public class SanphammoiAdapter extends RecyclerView.Adapter<SanphammoiAdapter.My
                     intent.putExtra("chitiet",sanPhamMoi);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(intent);
+                }else{
+                    EventBus.getDefault().postSticky(new SuaXoaEvent(sanPhamMoi));
                 }
             }
         });
@@ -64,7 +75,7 @@ public class SanphammoiAdapter extends RecyclerView.Adapter<SanphammoiAdapter.My
         return array.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnCreateContextMenuListener, View.OnLongClickListener {
         TextView txtgia,txtten;
         ImageView imghinhanh;
         private ItemClickListen itemClickListener;
@@ -74,6 +85,8 @@ public class SanphammoiAdapter extends RecyclerView.Adapter<SanphammoiAdapter.My
             txtten = itemView.findViewById(R.id.itemsp_ten);
             imghinhanh = itemView.findViewById(R.id.itemsp_image);
             itemView.setOnClickListener(this);
+            itemView.setOnCreateContextMenuListener(this);
+            itemView.setOnLongClickListener(this);
         }
 
         public void setItemClickListener(ItemClickListen itemClickListener) {
@@ -83,6 +96,18 @@ public class SanphammoiAdapter extends RecyclerView.Adapter<SanphammoiAdapter.My
         @Override
         public void onClick(View view) {
             itemClickListener.onClick(view,getAdapterPosition(),false);
+        }
+
+        @Override
+        public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
+            contextMenu.add(0,0,getAdapterPosition(),"Sửa");
+            contextMenu.add(0,0,getAdapterPosition(),"Xóa");
+        }
+
+        @Override
+        public boolean onLongClick(View view) {
+            itemClickListener.onClick(view,getAdapterPosition(),true);
+            return false;
         }
     }
 }

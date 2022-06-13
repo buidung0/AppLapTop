@@ -19,12 +19,12 @@ import com.example.appbanhang.model.SanPhamMoi;
 import java.text.DecimalFormat;
 import java.util.List;
 
-public class DienThoaiAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class LapTopAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     Context context;
     List<SanPhamMoi> array;
     private static final int VIEW_TYPE_DATA =0;
     private static final int VIEW_TYPE_LOADING =0;
-    public DienThoaiAdapter(Context context, List<SanPhamMoi> array) {
+    public LapTopAdapter(Context context, List<SanPhamMoi> array) {
         this.context = context;
         this.array = array;
     }
@@ -50,6 +50,7 @@ public class DienThoaiAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
             myViewHolder.giasp.setText("Giá:  "+decimalFormat.format(Double.parseDouble(sanPham.getGiasp()))+ "Đ");
             myViewHolder.mota.setText(sanPham.getMota());
+
             Glide.with(context).load(sanPham.getHinhanh()).into(myViewHolder.hinhanh);
             myViewHolder.setItemClickListen(new ItemClickListen() {
                 @Override

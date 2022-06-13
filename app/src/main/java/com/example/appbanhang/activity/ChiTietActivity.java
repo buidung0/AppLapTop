@@ -78,19 +78,19 @@ public class ChiTietActivity extends AppCompatActivity {
                 gioHang.setHinhsp(sanPhamMoi.getHinhanh());
                 Utils.manggiohang.add(gioHang);
             }
-        }else{
-            int soluong = Integer.parseInt(spinner.getSelectedItem().toString());
-            long gia = Long.parseLong(sanPhamMoi.getGiasp()) ;
-            GioHang gioHang = new GioHang();
-            gioHang.setGiasp(gia);
-            gioHang.setSoluong(soluong);
-            gioHang.setIdsp(sanPhamMoi.getId());
-            gioHang.setTensp(sanPhamMoi.getTensp());
-            gioHang.setHinhsp(sanPhamMoi.getHinhanh());
-            Utils.manggiohang.add(gioHang);
-        }
+            }else{
+                int soluong = Integer.parseInt(spinner.getSelectedItem().toString());
+                long gia = Long.parseLong(sanPhamMoi.getGiasp()) ;
+                GioHang gioHang = new GioHang();
+                gioHang.setGiasp(gia);
+                gioHang.setSoluong(soluong);
+                gioHang.setIdsp(sanPhamMoi.getId());
+                gioHang.setTensp(sanPhamMoi.getTensp());
+                gioHang.setHinhsp(sanPhamMoi.getHinhanh());
+                Utils.manggiohang.add(gioHang);
+            }
 
-        badge.setText(String.valueOf(Utils.manggiohang.size()));
+            badge.setText(String.valueOf(Utils.manggiohang.size()));
     }
 
     private void initData() {
@@ -129,7 +129,6 @@ public class ChiTietActivity extends AppCompatActivity {
             }
 
             badge.setText(String.valueOf(totalItem));
-//            Log.d("ABC","132"+totalItem);
 
         }
     }

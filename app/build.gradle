@@ -62,4 +62,6 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.9'
     //neumorphirm
 //    implementation 'com.github.fornewid:neumorphism:0.3.2'
+    //imagepicker
+    implementation 'com.github.dhaval2404:imagepicker:2.1'
 }

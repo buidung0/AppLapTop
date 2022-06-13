@@ -26,6 +26,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tensp"
             android:hint="Tên sản phẩm"
+            android:inputType="text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </com.google.android.material.textfield.TextInputLayout>
@@ -42,25 +43,45 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/giasp"
             android:hint="Giá Sản Phẩm"
+            android:inputType="text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
+    <LinearLayout
         android:id="@+id/line3"
-        android:padding="5dp"
+        android:orientation="horizontal"
+        android:weightSum="5"
         app:layout_constraintTop_toBottomOf="@id/line2"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/hinhanh"
-            android:hint="Hình ảnh"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_weight="4"
+            android:padding="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/hinhanh"
+                android:hint="Hình ảnh"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <ImageView
+            android:id="@+id/imgcamera"
+            android:background="#F7FAFD"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_camera_24"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            app:tint="#14DA1D" />
+    </LinearLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/line4"
         android:padding="5dp"
@@ -74,6 +95,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/mota"
             android:hint="Mô tả"
+            android:inputType="text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </com.google.android.material.textfield.TextInputLayout>

@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.appbanhang.R;
-import com.example.appbanhang.adapter.DienThoaiAdapter;
+import com.example.appbanhang.adapter.LapTopAdapter;
 import com.example.appbanhang.model.SanPhamMoi;
 import com.example.appbanhang.retrofit.ApiBanHang;
 import com.example.appbanhang.retrofit.RetrofitClient;
@@ -32,7 +32,7 @@ public class MacBookActivity extends AppCompatActivity {
     CompositeDisposable compositeDisposable = new CompositeDisposable();
     int page = 1;
     int loai;
-    DienThoaiAdapter adapterDt;
+    LapTopAdapter adapterDt;
     List<SanPhamMoi> sanPhamMoiList;
     LinearLayoutManager linearLayoutManager;
     Handler handler = new Handler();
@@ -113,7 +113,7 @@ public class MacBookActivity extends AppCompatActivity {
                             if(sanPhamMoiModel.isSuccess()){
                                 if(adapterDt == null){
                                     sanPhamMoiList = sanPhamMoiModel.getResult();
-                                    adapterDt = new DienThoaiAdapter(getApplicationContext(), sanPhamMoiList);
+                                    adapterDt = new LapTopAdapter(getApplicationContext(), sanPhamMoiList);
                                     recyclerView.setAdapter(adapterDt);
                                 }else{
                                     int vitri = sanPhamMoiList.size()-1;

@@ -13,6 +13,8 @@
         android:layout_height="wrap_content"
         android:text="Giỏ hàng trống"
         android:textSize="20sp"
+        android:textColor="@android:color/holo_red_light"
+        android:layout_marginLeft="130dp"
         android:textStyle="bold"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
