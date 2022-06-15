@@ -1,4 +1,5 @@
 package com.example.appbanhang.retrofit;
+import com.example.appbanhang.model.DonHangModel;
 import com.example.appbanhang.model.LoaiSpModel;
 import com.example.appbanhang.model.MessageModel;
 import com.example.appbanhang.model.SanPhamMoiModel;
@@ -57,6 +58,11 @@ public interface ApiBanHang {
             @Field("soluong") int soluong,
             @Field("chitiet") String chitiet
     );
+    @POST("xemdonhang.php")
+    @FormUrlEncoded
+    Observable<DonHangModel> xemDOnHang(
+            @Field("iduser") int id
+    );
 
     @POST("timkiem.php")
     @FormUrlEncoded
@@ -67,7 +73,7 @@ public interface ApiBanHang {
     @POST("xoa.php")
     @FormUrlEncoded
     Observable<MessageModel> xoaSanPham(
-            @Field("search") int id
+            @Field("id") int id
     );
 
     @POST("insertsp.php")
@@ -92,7 +98,7 @@ public interface ApiBanHang {
     );
 
     @Multipart
-    @POST("/uploade.php")
+    @POST("upload.php")
     Call<MessageModel> uploadFile(
             @Part MultipartBody.Part file
 //            @Part("file") RequestBody name

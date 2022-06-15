@@ -15,6 +15,12 @@
         android:theme="@style/Theme.AppBanHang"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activity.XemDonActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.LienHeActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.ThemSPActivity"
             android:exported="false" />
         <activity

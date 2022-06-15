@@ -7,15 +7,6 @@ public class User {
     public User() {
     }
 
-    public User(int id, String email, String username, String password, String phone, String role) {
-        this.id = id;
-        this.email = email;
-        this.username = username;
-        this.password = password;
-        this.phone = phone;
-        this.role = role;
-    }
-
     public int getId() {
         return id;
     }

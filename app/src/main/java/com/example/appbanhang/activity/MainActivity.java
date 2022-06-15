@@ -103,6 +103,14 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(quanly);
                         break;
                     case 4:
+                        Intent thongtin = new Intent(getApplicationContext(),LienHeActivity.class);
+                        startActivity(thongtin);
+                        break;
+                    case 5:
+                        Intent donhang = new Intent(getApplicationContext(),XemDonActivity.class);
+                        startActivity(donhang);
+                        break;
+                    case 6:
                         Paper.book().delete("user");
                         Intent dangxuat = new Intent(getApplicationContext(),DangNhapActivity.class);
                         startActivity(dangxuat);

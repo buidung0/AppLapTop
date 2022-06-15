@@ -69,7 +69,7 @@ public class ThanhToanActivity extends AppCompatActivity {
         btndathang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String str_diachi = edtdiachi.toString().trim();
+                String str_diachi = edtdiachi.getText().toString().trim();
                 if(TextUtils.isEmpty(str_diachi)){
                     Toast.makeText(getApplicationContext(),"bạn chưa nhập địa chỉ",Toast.LENGTH_LONG).show();
                 }else{
@@ -82,12 +82,12 @@ public class ThanhToanActivity extends AppCompatActivity {
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(
-                                 User_model -> {
-                                    Toast.makeText(getApplicationContext(),"thanh cong",Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                                    startActivity(intent);
-                                    finish();
-                                },
+                                 user_model -> {
+                                     Toast.makeText(getApplicationContext(),"thanh cong",Toast.LENGTH_SHORT).show();
+                                     Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                                     startActivity(intent);
+                                     finish();
+                                 },
                                 throwable -> {
                                     Toast.makeText(getApplicationContext(),throwable.getMessage(),Toast.LENGTH_SHORT).show();
                                 }

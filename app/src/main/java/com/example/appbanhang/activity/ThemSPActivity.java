@@ -110,7 +110,7 @@ public class ThemSPActivity extends AppCompatActivity {
         binding.btnthem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "pdad", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), "pdad", Toast.LENGTH_SHORT).show();
                 if(flag == false){
                     themsanpham();
                 }else{
@@ -130,8 +130,6 @@ public class ThemSPActivity extends AppCompatActivity {
                         .start();
             }
         });
-
-
     }
 
     private void suaSanPham() {
@@ -240,10 +238,6 @@ public class ThemSPActivity extends AppCompatActivity {
 
     private void initView() {
         spinner = findViewById(R.id.spinner_loai);
-//        tensp = findViewById(R.id.tensp);
-//        giasp = findViewById(R.id.giasp);
-//        hinhanh = findViewById(R.id.hinhanh);
-//        mota = findViewById(R.id.mota);
     }
 
 }

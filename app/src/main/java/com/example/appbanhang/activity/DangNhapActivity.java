@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -27,6 +28,7 @@ public class DangNhapActivity extends AppCompatActivity {
     EditText edtemail,edtpass;
     ApiBanHang apiBanHang;
     CompositeDisposable compositeDisposable = new CompositeDisposable();
+    boolean isLogin = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,25 +66,7 @@ public class DangNhapActivity extends AppCompatActivity {
                     //luu thong tin dang nhap
                     Paper.book().write("email",str_edtemail);
                     Paper.book().write("password",str_edtpass);
-                    compositeDisposable.add(apiBanHang.dangnhap(str_edtemail,str_edtpass)
-                            .subscribeOn(Schedulers.io())
-                            .observeOn(AndroidSchedulers.mainThread())
-                            .subscribe(
-                                    user_model -> {
-                                        if(user_model.isSuccess()){
-                                            // Utils.user_current = user_model.getResult().get(0);
-                                            Intent home = new Intent(getApplicationContext(), MainActivity.class);
-                                            startActivity(home);
-                                            finish();
-                                        }
-                                        else{
-                                            Toast.makeText(getApplicationContext(),user_model.getMessage(),Toast.LENGTH_LONG).show();
-                                        }
-                                    },
-                                    throwable -> {
-                                        Toast.makeText(getApplicationContext(),throwable.getMessage(),Toast.LENGTH_LONG).show();
-                                    }
-                            ));
+                    dangNhap(str_edtemail,str_edtpass);
 
                 }
 
@@ -102,8 +86,43 @@ public class DangNhapActivity extends AppCompatActivity {
         if(Utils.user_current.getEmail() != null && Utils.user_current.getPassword() != null){
             edtemail.setText(Paper.book().read("email"));
             edtpass.setText(Paper.book().read("password"));
+            if(Paper.book().read("isLogin")!= null){
+                boolean flag = Paper.book().read("isLogin");
+                if(flag){
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            dangNhap(Paper.book().read("email"),Paper.book().read("password"));
+                        }
+                    },1000);
+                }
+            }
 
         }
+    }
+
+    private void dangNhap(String email,String pass) {
+        compositeDisposable.add(apiBanHang.dangnhap(email,pass)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                        user_model -> {
+                            if(user_model.isSuccess()){
+                                isLogin = true;
+                                Paper.book().write("isLogin",isLogin);
+                                Utils.user_current = user_model.getResult().get(0);
+                                Intent home = new Intent(getApplicationContext(), MainActivity.class);
+                                startActivity(home);
+                                finish();
+                            }
+                            else{
+                                Toast.makeText(getApplicationContext(),user_model.getMessage(),Toast.LENGTH_LONG).show();
+                            }
+                        },
+                        throwable -> {
+                            Toast.makeText(getApplicationContext(),throwable.getMessage(),Toast.LENGTH_LONG).show();
+                        }
+                ));
     }
 
     @Override
