@@ -111,10 +111,13 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(donhang);
                         break;
                     case 6:
-                        Paper.book().delete("user");
+                        Intent doimk = new Intent(getApplicationContext(), ChangePassActivity.class);
+                        startActivity(doimk);
+                        break;
+                    case 7:
+//                        Paper.book().delete("user");
                         Intent dangxuat = new Intent(getApplicationContext(),DangNhapActivity.class);
                         startActivity(dangxuat);
-                        finish();
                         break;
 
                 }

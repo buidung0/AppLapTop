@@ -43,8 +43,9 @@ public class ThanhToanActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thanh_toan);
         initView();
-        countItem();
+
         initControl();
+        countItem();
     }
 
     private void countItem() {

@@ -64,6 +64,19 @@ public interface ApiBanHang {
             @Field("iduser") int id
     );
 
+    @POST("reset.php")
+    @FormUrlEncoded
+    Observable<User_model> reset(
+            @Field("email") String email
+    );
+    @POST("changepass.php")
+    @FormUrlEncoded
+    Observable<User_model> changepass(
+            @Field("email") String email,
+            @Field("password") String password,
+            @Field("newpassword") String newpassword
+    );
+
     @POST("timkiem.php")
     @FormUrlEncoded
     Observable<SanPhamMoiModel> search(
@@ -101,6 +114,5 @@ public interface ApiBanHang {
     @POST("upload.php")
     Call<MessageModel> uploadFile(
             @Part MultipartBody.Part file
-//            @Part("file") RequestBody name
     );
 }

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.ChangePassActivity">
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40dp"
+        android:textColor="@android:color/black"
+        android:text="Thay Đổi Mật Khẩu"
+        android:textStyle="bold"
+        android:layout_gravity="center"/>
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_marginTop="60dp"
+            android:padding="10dp"
+            android:id="@+id/email"
+            android:inputType="textEmailAddress"
+            android:drawableLeft="@drawable/ic_email"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:text="Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+        <EditText
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:id="@+id/txtCurrentPassword"
+            android:inputType="textPassword"
+            android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
+            android:hint="Mật khẩu cũ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </EditText>
+        <EditText
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:id="@+id/txtNewPassword"
+            android:inputType="textPassword"
+            android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
+            android:hint="Mật khẩu mới"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </EditText>
+        <EditText
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:id="@+id/txtConfirmPassword"
+            android:inputType="textPassword"
+            android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
+            android:hint="Nhập Lại Mật khẩu mới"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </EditText>
+
+    </LinearLayout>
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:background="@drawable/background_button"
+            android:id="@+id/btnchagepass"
+            android:layout_marginLeft="80dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lưu"></Button>
+        <Button
+            android:background="@drawable/background_button"
+            android:id="@+id/btncancel"
+            android:layout_marginLeft="80dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hủy"></Button>
+    </LinearLayout>
+
+</LinearLayout>

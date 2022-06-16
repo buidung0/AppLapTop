@@ -64,4 +64,6 @@ dependencies {
 //    implementation 'com.github.fornewid:neumorphism:0.3.2'
     //imagepicker
     implementation 'com.github.dhaval2404:imagepicker:2.1'
+    //
+    implementation 'com.airbnb.android:lottie:4.2.2'
 }

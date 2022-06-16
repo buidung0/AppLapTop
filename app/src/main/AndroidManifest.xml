@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.appbanhang">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -14,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppBanHang"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".activity.SplashActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.XemDonActivity"
             android:exported="false" />
@@ -33,7 +37,17 @@
             android:name=".activity.ThanhToanActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.DangNhapActivity"
+            android:name=".activity.ChangePassActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.Quenmk_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.SplashActivity"
+            android:exported="false"
+            tools:ignore="DuplicateActivity" />
+        <activity
+            android:name=".activity.MainActivity"
             android:exported="false" />
         <activity
             android:name=".activity.GioHangActivity"
@@ -51,7 +65,7 @@
             android:name=".activity.DangKiActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.DangNhapActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

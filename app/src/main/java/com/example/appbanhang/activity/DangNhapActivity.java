@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.util.Util;
 import com.example.appbanhang.R;
 import com.example.appbanhang.retrofit.ApiBanHang;
 import com.example.appbanhang.retrofit.RetrofitClient;
@@ -24,7 +25,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class DangNhapActivity extends AppCompatActivity {
     Button btndangnhap;
-    TextView txtdangky;
+    TextView txtdangky,quenmatkhau;
     EditText edtemail,edtpass;
     ApiBanHang apiBanHang;
     CompositeDisposable compositeDisposable = new CompositeDisposable();
@@ -50,10 +51,6 @@ public class DangNhapActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                dangnhap();
-            }
-
-            private void dangnhap() {
                 String str_edtemail = edtemail.getText().toString().trim();//cat du lieu 2 dau
                 String str_edtpass = edtpass.getText().toString().trim();
                 if(TextUtils.isEmpty(str_edtemail)){
@@ -81,6 +78,15 @@ public class DangNhapActivity extends AppCompatActivity {
         btndangnhap = findViewById(R.id.btndangnhap);
         edtemail = findViewById(R.id.edtemail);
         edtpass = findViewById(R.id.edtpass);
+        quenmatkhau = findViewById(R.id.quenmatkhau);
+
+        quenmatkhau.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent quenmk = new Intent(getApplicationContext(),Quenmk_Activity.class);
+                startActivity(quenmk);
+            }
+        });
 
         //read data
         if(Utils.user_current.getEmail() != null && Utils.user_current.getPassword() != null){
@@ -110,8 +116,11 @@ public class DangNhapActivity extends AppCompatActivity {
                             if(user_model.isSuccess()){
                                 isLogin = true;
                                 Paper.book().write("isLogin",isLogin);
-                                Utils.user_current = user_model.getResult().get(0);
-                                Intent home = new Intent(getApplicationContext(), MainActivity.class);
+//                                Utils.user_current = user_model.getResult().get(0);
+                                Utils.user_current.setEmail(user_model.getResult().get(0).getEmail());
+                                Utils.user_current.setPassword(user_model.getResult().get(0).getPassword());
+                                Utils.user_current.setPhone(user_model.getResult().get(0).getPhone());
+                                Intent home = new Intent(getApplicationContext(), SplashActivity.class);
                                 startActivity(home);
                                 finish();
                             }
