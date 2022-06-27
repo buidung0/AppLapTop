@@ -4,19 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.ChiTietActivity">
+    tools:context=".Controller.ChiTietActivity">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:background="#3ad541"
         app:title="Chi tiết sản phẩm"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize" />
+        android:layout_height="?android:attr/actionBarSize" />
 
     <FrameLayout
         android:id="@+id/framegiohang"
         android:layout_width="55dp"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="?android:attr/actionBarSize"
         android:layout_gravity="right"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints">

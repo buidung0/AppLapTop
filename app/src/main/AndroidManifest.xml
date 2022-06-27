@@ -6,7 +6,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,57 +17,77 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppBanHang"
         android:usesCleartextTraffic="true">
+
+        <!--
+             TODO: Before you run your application, you need a Google Maps API key.
+
+             To get one, follow the directions here:
+
+                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+
+             Once you have your API key (it starts with "AIza"), define a new property in your
+             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDw6A8S08AaW31Kr_1WhkN0Td8yw7oCwZ8" />
+
         <activity
-            android:name=".activity.SplashActivity"
+            android:name=".Controller.MapsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_maps" />
+        <activity
+            android:name=".Controller.SplashActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.XemDonActivity"
+            android:name=".Controller.XemDonActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.LienHeActivity"
+            android:name=".Controller.LienHeActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.ThemSPActivity"
+            android:name=".Controller.ThemSPActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.QuanLyActivity"
+            android:name=".Controller.QuanLyActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.SearchActivity"
+            android:name=".Controller.SearchActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.ThanhToanActivity"
+            android:name=".Controller.ThanhToanActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.ChangePassActivity"
+            android:name=".Controller.ChangePassActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.Quenmk_Activity"
+            android:name=".Controller.Quenmk_Activity"
             android:exported="false" />
         <activity
-            android:name=".activity.SplashActivity"
+            android:name=".Controller.SplashActivity"
             android:exported="false"
             tools:ignore="DuplicateActivity" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".Controller.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.GioHangActivity"
+            android:name=".Controller.GioHangActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.ChiTietActivity"
+            android:name=".Controller.ChiTietActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.LapTopActivity"
+            android:name=".Controller.LapTopActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.MacBookActivity"
+            android:name=".Controller.MacBookActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.DangKiActivity"
+            android:name=".Controller.DangKiActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.DangNhapActivity"
+            android:name=".Controller.DangNhapActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

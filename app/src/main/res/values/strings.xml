@@ -6,4 +6,5 @@
     <string name="mua_h_ng">Mua hàng</string>
     <string name="t_ng_ti_n">Tổng tiền:</string>
     <string name="example_gmail_com">example@gmail.com</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>

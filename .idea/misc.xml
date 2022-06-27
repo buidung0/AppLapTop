@@ -8,7 +8,10 @@
         <entry key="..\:/Doc/AppBanHang/app/src/main/res/layout/item_dienthoai.xml" value="0.25" />
         <entry key="..\:/Doc/AppBanHang/app/src/main/res/layout/item_giohang.xml" value="0.1" />
         <entry key="..\:/Stuff/android/AppLapTop/app/src/main/res/drawable/boder.xml" value="0.228" />
-        <entry key="..\:/Stuff/android/AppLapTop/app/src/main/res/layout/activity_change_pass.xml" value="0.16614583333333333" />
+        <entry key="..\:/Stuff/android/AppLapTop/app/src/main/res/layout/activity_accounts.xml" value="0.25" />
+        <entry key="..\:/Stuff/android/AppLapTop/app/src/main/res/layout/activity_change_pass.xml" value="0.2" />
+        <entry key="..\:/Stuff/android/AppLapTop/app/src/main/res/layout/activity_chi_tiet.xml" value="0.25" />
+        <entry key="..\:/Stuff/android/AppLapTop/app/src/main/res/layout/activity_dang_ki.xml" value="0.25" />
         <entry key="..\:/Stuff/android/AppLapTop/app/src/main/res/layout/activity_dangnhap.xml" value="0.2" />
         <entry key="..\:/Stuff/android/AppLapTop/app/src/main/res/layout/activity_gio_hang.xml" value="0.25" />
         <entry key="..\:/Stuff/android/AppLapTop/app/src/main/res/layout/activity_lap_top.xml" value="0.25" />
@@ -17,10 +20,14 @@
         <entry key="..\:/Stuff/android/AppLapTop/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Stuff/android/AppLapTop/app/src/main/res/layout/activity_quan_ly.xml" value="0.2" />
         <entry key="..\:/Stuff/android/AppLapTop/app/src/main/res/layout/activity_quenmk.xml" value="0.16614583333333333" />
+        <entry key="..\:/Stuff/android/AppLapTop/app/src/main/res/layout/activity_resetpass.xml" value="0.25" />
+        <entry key="..\:/Stuff/android/AppLapTop/app/src/main/res/layout/activity_search.xml" value="0.25" />
         <entry key="..\:/Stuff/android/AppLapTop/app/src/main/res/layout/activity_splash.xml" value="0.16614583333333333" />
         <entry key="..\:/Stuff/android/AppLapTop/app/src/main/res/layout/activity_thanh_toan.xml" value="0.25" />
         <entry key="..\:/Stuff/android/AppLapTop/app/src/main/res/layout/activity_themsp.xml" value="0.25" />
         <entry key="..\:/Stuff/android/AppLapTop/app/src/main/res/layout/activity_xem_don.xml" value="0.2" />
+        <entry key="..\:/Stuff/android/AppLapTop/app/src/main/res/layout/item_accounts.xml" value="0.25" />
+        <entry key="..\:/Stuff/android/AppLapTop/app/src/main/res/layout/item_chitiet.xml" value="0.25" />
         <entry key="..\:/Stuff/android/AppLapTop/app/src/main/res/layout/item_donhang.xml" value="0.2" />
         <entry key="..\:/Stuff/android/AppLapTop/app/src/main/res/layout/item_giohang.xml" value="0.25" />
         <entry key="..\:/Stuff/android/AppLapTop/app/src/main/res/layout/item_sanpham.xml" value="0.25" />
